@@ -1,0 +1,44 @@
+﻿@model F2018Travel.Models.Region
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Region</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Region1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Region1)
+        </dd>
+
+    </dl>
+</div>
+<h5>Destinations</h5>
+
+<table class="table table-striped table-hover">
+    <tr>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Photo</th>
+    </tr>
+    @foreach (var d in Model.Destinations)
+    {
+        <tr>
+            <td>@d.Name</td>
+            <td>@d.Location</td>
+            <td><img src="~/Content/Images/@d.Photo" alt="@d.Name" width="75" /></td>
+        </tr>
+    }
+</table>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RegionId }) | 
+    @Html.ActionLink("Back to List", "Index")
+</p>

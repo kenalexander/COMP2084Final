@@ -1,0 +1,61 @@
+﻿@model F2018Travel.Models.Destination
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Destination</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Photo)
+        </dt>
+
+        <dd>
+            @if (@Model.Photo != null)
+            {       
+               <img src="~/Content/Images/@Model.Photo" alt="@Model.Name" width="300" />
+            }
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegionId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Region.Region1)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DestinationId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
